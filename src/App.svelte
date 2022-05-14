@@ -3,6 +3,7 @@
 	import Sidebar from './components/sidebar.svelte';
 	
 	let sidebar_show = false;
+	let url = "https://localhost:44333/";
 	
 	export let name;
 	let a = async ()=>{
@@ -13,9 +14,11 @@
 
 <main>
 	<Sidebar bind:show={sidebar_show} />
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<button on:click={() => sidebar_show = !sidebar_show}>Toggle Sidebar</button>
+	<iframe src={url} frameborder="0" allowtransparency 
+		style="width:100%;height: calc(100vh + 15px);" 
+		title='dashboard'></iframe>
+	
 </main>
 
 <style>
